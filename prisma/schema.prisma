@@ -1,0 +1,182 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// Representa las diferentes categorías del torneo (ej: Primera A, Sub-20)
+model Category {
+  id        String     @id @default(cuid())
+  name      String     @unique
+  season    String?    // Temporada (ej: "2026")
+  teams     Team[]
+  matches   Match[]
+  standings Standing[]
+  players   Player[]
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  @@map("categories")
+}
+
+// Representa un equipo de fútbol vinculado a un barrio de Río Gallegos
+model Team {
+  id           String     @id @default(cuid())
+  name         String     @unique
+  neighborhood String     // Barrio de Río Gallegos
+  logoUrl      String?
+  categoryId   String
+  category     Category   @relation(fields: [categoryId], references: [id])
+  players      Player[]
+  homeMatches  Match[]    @relation("HomeTeam")
+  awayMatches  Match[]    @relation("AwayTeam")
+  standings    Standing[]
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  @@index([categoryId])
+  @@map("teams")
+}
+
+// Posición del jugador en el campo
+enum PlayerPosition {
+  GOALKEEPER  // Arquero
+  DEFENDER    // Defensor
+  MIDFIELDER  // Mediocampista
+  FORWARD     // Delantero
+}
+
+// Jugador del equipo
+model Player {
+  id         String          @id @default(cuid())
+  name       String          // Nombre
+  lastName   String?         // Apellido
+  dni        String?         // Documento Nacional de Identidad
+  position   PlayerPosition? // Posición en el campo
+  number     Int?
+  teamId     String
+  team       Team            @relation(fields: [teamId], references: [id])
+  categoryId String
+  category   Category        @relation(fields: [categoryId], references: [id])
+  createdAt  DateTime        @default(now())
+  updatedAt  DateTime        @updatedAt
+
+  @@index([teamId])
+  @@index([categoryId])
+  @@map("players")
+}
+
+// Estado del partido
+enum MatchStatus {
+  SCHEDULED // Programado
+  LIVE      // En Vivo
+  FINISHED  // Finalizado
+  SUSPENDED // Suspendido
+}
+
+// Encuentro entre dos equipos
+model Match {
+  id            String      @id @default(cuid())
+  date          DateTime
+  status        MatchStatus @default(SCHEDULED)
+  
+  homeTeamId    String
+  homeTeam      Team        @relation("HomeTeam", fields: [homeTeamId], references: [id])
+  homeScore     Int         @default(0)
+  
+  awayTeamId    String
+  awayTeam      Team        @relation("AwayTeam", fields: [awayTeamId], references: [id])
+  awayScore     Int         @default(0)
+  
+  categoryId    String
+  category      Category    @relation(fields: [categoryId], references: [id])
+  
+  venueId       String?     // Relación opcional con Venue
+  venue         Venue?      @relation(fields: [venueId], references: [id])
+  
+  field         String?     // Cancha donde se juega (mantenido por compatibilidad pre-modelo)
+  round         Int?        // Nro de Fecha
+  
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+
+  @@index([categoryId])
+  @@index([homeTeamId])
+  @@index([awayTeamId])
+  @@index([venueId])
+  @@map("matches")
+}
+
+// Tabla de posiciones normalizada
+model Standing {
+  id          String   @id @default(cuid())
+  categoryId  String
+  category    Category @relation(fields: [categoryId], references: [id])
+  teamId      String
+  team        Team     @relation(fields: [teamId], references: [id])
+  
+  played      Int      @default(0) // Partidos Jugados
+  won         Int      @default(0) // Ganados
+  drawn       Int      @default(0) // Empatados
+  lost        Int      @default(0) // Perdidos
+  goalsFor    Int      @default(0) // Goles a Favor
+  goalsAgainst Int     @default(0) // Goles en Contra
+  points      Int      @default(0) // Puntos totales
+  
+  updatedAt   DateTime @updatedAt
+
+  @@unique([categoryId, teamId])
+  @@index([categoryId])
+  @@index([teamId])
+  @@index([played])
+  @@map("standings")
+}
+
+// Noticias de la asociación
+model News {
+  id        String   @id @default(cuid())
+  title     String
+  slug      String?  @unique // URL amigable generada desde el título
+  content   String   @db.Text
+  imageUrl  String?
+  published Boolean  @default(true)
+  date      DateTime @default(now())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("news")
+}
+
+// Administradores del panel
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String   // Hash de la contraseña
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("users")
+}
+
+// Canchas y terrenos de juego de la asociación
+model Venue {
+  id          String   @id @default(cuid())
+  name        String   @unique  // Nombre de la cancha
+  description String?  @db.Text // Descripción del terreno
+  address     String?           // Dirección
+  imageUrl    String?           // Foto de la cancha
+  mapsUrl     String?           // Link a Google Maps
+  matches     Match[]           // Partidos jugados acá
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("venues")
+}
