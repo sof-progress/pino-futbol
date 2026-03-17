@@ -3,6 +3,8 @@ import prisma from '@/lib/prisma';
 import { CanchaForm } from '../../components/CanchaForm';
 import type { Metadata } from 'next';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   title: 'Editar Cancha — Pino Fútbol Admin',
   robots: 'noindex, nofollow',

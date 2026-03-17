@@ -1,6 +1,8 @@
 import { NoticiaForm } from '../components/NoticiaForm';
 import type { Metadata } from 'next';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
     title: 'Nueva Noticia — Pino Fútbol Admin',
     robots: 'noindex, nofollow',

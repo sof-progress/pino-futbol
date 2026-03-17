@@ -3,6 +3,8 @@ import prisma from '@/lib/prisma';
 import { ResultadoForm } from './ResultadoForm';
 import type { Metadata } from 'next';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
     title: 'Cargar Resultado — Pino Fútbol Admin',
     robots: 'noindex, nofollow',

@@ -2,6 +2,8 @@ import prisma from '@/lib/prisma';
 import { JugadorForm } from '../components/JugadorForm';
 import type { Metadata } from 'next';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
     title: 'Nuevo Jugador — Pino Fútbol Admin',
     robots: 'noindex, nofollow',

@@ -2,6 +2,8 @@ import prisma from '@/lib/prisma';
 import { NuevoPartidoForm } from '../components/NuevoPartidoForm';
 import type { Metadata } from 'next';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
     title: 'Nuevo Partido — Pino Fútbol Admin',
     robots: 'noindex, nofollow',

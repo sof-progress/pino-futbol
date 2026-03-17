@@ -3,6 +3,8 @@ import prisma from '@/lib/prisma';
 import { EquipoForm } from '../../components/EquipoForm';
 import type { Metadata } from 'next';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
     title: 'Editar Equipo — Pino Fútbol Admin',
     robots: 'noindex, nofollow',

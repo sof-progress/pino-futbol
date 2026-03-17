@@ -1,6 +1,8 @@
 import { CategoriaForm } from '../components/CategoriaForm';
 import type { Metadata } from 'next';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
     title: 'Nueva Categoría — Pino Fútbol Admin',
     robots: 'noindex, nofollow',

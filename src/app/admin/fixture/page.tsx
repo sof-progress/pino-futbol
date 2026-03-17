@@ -5,6 +5,8 @@ import { FixtureFilter } from './FixtureFilter';
 import type { Metadata } from 'next';
 import type { MatchStatus } from '@prisma/client';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
     title: 'Fixture — Pino Fútbol Admin',
     robots: 'noindex, nofollow',

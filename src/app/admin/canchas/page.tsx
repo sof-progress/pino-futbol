@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { CanchaRow } from './CanchaRow';
 import type { Metadata } from 'next';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   title: 'Canchas — Pino Fútbol Admin',
   robots: 'noindex, nofollow',

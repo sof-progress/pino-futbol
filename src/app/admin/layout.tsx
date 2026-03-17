@@ -6,6 +6,8 @@ import { AuthProvider } from '@/lib/auth-provider';
 import { AdminSidebar } from './components/AdminSidebar';
 import { AdminHeader } from './components/AdminHeader';
 
+export const dynamic = 'force-dynamic';
+
 // Layout del panel de administración — completamente independiente de la web pública
 export default function AdminLayout({
     children,

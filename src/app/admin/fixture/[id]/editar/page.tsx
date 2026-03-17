@@ -3,6 +3,8 @@ import prisma from '@/lib/prisma';
 import { EditarPartidoForm } from './EditarPartidoForm';
 import type { Metadata } from 'next';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
     title: 'Editar Partido — Pino Fútbol Admin',
     robots: 'noindex, nofollow',

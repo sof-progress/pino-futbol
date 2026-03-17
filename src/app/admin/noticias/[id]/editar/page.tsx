@@ -3,6 +3,8 @@ import prisma from '@/lib/prisma';
 import { NoticiaForm } from '../../components/NoticiaForm';
 import type { Metadata } from 'next';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
     title: 'Editar Noticia — Pino Fútbol Admin',
     robots: 'noindex, nofollow',

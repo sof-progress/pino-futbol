@@ -4,6 +4,8 @@ import { EquipoRow } from './EquipoRow';
 import { EquipoFilter } from './EquipoFilter';
 import type { Metadata } from 'next';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
     title: 'Equipos — Pino Fútbol Admin',
     robots: 'noindex, nofollow',

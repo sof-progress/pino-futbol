@@ -4,6 +4,8 @@ import { JugadorRow } from './JugadorRow';
 import { JugadorFilter } from './JugadorFilter';
 import type { Metadata } from 'next';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
     title: 'Jugadores — Pino Fútbol Admin',
     robots: 'noindex, nofollow',

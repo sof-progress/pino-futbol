@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { NoticiaRow } from './NoticiaRow';
 import type { Metadata } from 'next';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
     title: 'Noticias — Pino Fútbol Admin',
     robots: 'noindex, nofollow',
