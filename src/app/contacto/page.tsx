@@ -1,5 +1,6 @@
 import React from 'react';
 import { SectionTitle } from '@/components/ui/SectionTitle';
+import Image from 'next/image';
 
 export default function ContactoPage() {
     return (
@@ -8,38 +9,28 @@ export default function ContactoPage() {
                 title="Contacto"
                 subtitle="Comunicate con la AIFB de Río Gallegos"
             />
-            <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto py-12">
-                <div className="border border-brand-neon/10 rounded-3xl bg-zinc-900/30 p-8">
-                    <h3 className="text-lg font-black uppercase tracking-widest text-brand-neon mb-6 italic">Información</h3>
-                    <div className="space-y-6">
-                        <div className="flex items-start gap-4">
-                            <div className="w-10 h-10 rounded-full bg-brand-neon/10 flex items-center justify-center text-brand-neon flex-shrink-0">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
-                            </div>
-                            <div>
-                                <p className="text-white font-bold text-sm">Teléfono</p>
-                                <p className="text-brand-neon/50 text-xs mt-1">+54 (2966) 123-456</p>
-                            </div>
-                        </div>
-                        <div className="flex items-start gap-4">
-                            <div className="w-10 h-10 rounded-full bg-brand-neon/10 flex items-center justify-center text-brand-neon flex-shrink-0">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /><path d="M2 12h20" /></svg>
-                            </div>
-                            <div>
-                                <p className="text-white font-bold text-sm">Web</p>
-                                <p className="text-brand-neon/50 text-xs mt-1">www.pinofutbol.com.ar</p>
-                            </div>
-                        </div>
+            
+            <div className="max-w-4xl mx-auto py-12">
+                <div className="flex flex-col items-center justify-center py-20 border border-brand-neon/10 rounded-3xl bg-black/40 backdrop-blur-sm relative overflow-hidden group">
+                    {/* Efecto de brillo de fondo */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-brand-neon/5 rounded-full blur-[80px] pointer-events-none"></div>
+
+                    <div className="relative w-64 h-64 mb-6 transform transition-transform group-hover:scale-110 duration-500 drop-shadow-[0_0_30px_rgba(57,255,20,0.3)]">
+                        <Image
+                            src="/logo/desarrollo.png"
+                            alt="Página en desarrollo"
+                            fill
+                            className="object-contain [mask-image:linear-gradient(to_bottom,black_90%,transparent_100%)]"
+                            priority
+                        />
                     </div>
-                </div>
-                <div className="border border-brand-neon/10 rounded-3xl bg-zinc-900/30 p-8">
-                    <h3 className="text-lg font-black uppercase tracking-widest text-brand-neon mb-6 italic">Ubicación</h3>
-                    <p className="text-brand-neon/50 text-sm leading-relaxed">
-                        Nuestra sede se encuentra en el Corazón de Río Gallegos. Visitanos para inscripciones y consultas administrativas.
-                    </p>
-                    <div className="w-full h-40 mt-6 rounded-2xl bg-black border border-brand-neon/20 flex items-center justify-center relative overflow-hidden group">
-                        <div className="absolute inset-0 bg-brand-neon/5 transition-colors group-hover:bg-brand-neon/10"></div>
-                        <span className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-neon animate-pulse">Cargando Mapa...</span>
+
+                    <h2 className="text-2xl font-black uppercase tracking-[0.4em] text-brand-neon italic animate-glow drop-shadow-[0_0_8px_rgba(57,255,20,0.3)] text-center">
+                        Página en desarrollo...
+                    </h2>
+
+                    <div className="mt-10 w-32 h-1.5 bg-brand-neon/10 rounded-full relative overflow-hidden">
+                        <div className="absolute inset-0 bg-brand-neon w-1/3 animate-shimmer"></div>
                     </div>
                 </div>
             </div>
