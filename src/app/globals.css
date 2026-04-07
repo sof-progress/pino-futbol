@@ -1,9 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
-  --foreground: #39ff14;
-  /* Verde neón vibrante */
+  --background: #0D1B2A;
+  --foreground: #E0E1DD;
+  --brand-primary: #415A77;
+  --brand-secondary: #778DA9;
+  --surface: #1B263B;
+  --surface-border: #415A77;
 }
 
 @theme inline {
@@ -13,9 +16,10 @@
   --font-display: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono);
 
-  --color-brand-neon: #39ff14;
-  --color-brand-black: #000000;
-  --color-brand-concrete: #1a1a1a;
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-surface: var(--surface);
+  --color-surface-border: var(--surface-border);
 
   --animate-pulse-live: pulse-live 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   --animate-shimmer: shimmer 2s linear infinite;
@@ -45,19 +49,12 @@
 
   @keyframes glow {
     from {
-      text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 30px #39ff14;
+      text-shadow: 0 0 10px var(--brand-primary), 0 0 20px var(--brand-primary);
     }
 
     to {
-      text-shadow: 0 0 20px #39ff14, 0 0 30px #39ff14, 0 0 40px #39ff14, 0 0 50px #39ff14;
+      text-shadow: 0 0 20px var(--brand-primary), 0 0 30px var(--brand-primary), 0 0 40px var(--brand-primary);
     }
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #000000;
-    --foreground: #39ff14;
   }
 }
 

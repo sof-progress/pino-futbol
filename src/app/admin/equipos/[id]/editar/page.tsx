@@ -33,7 +33,7 @@ export default async function EditarEquipoPage({ params }: EditarEquipoPageProps
         <div className="space-y-6">
             <div>
                 <h1 className="text-2xl font-bold text-white">Editar equipo</h1>
-                <p className="text-zinc-500 text-sm mt-1">Modificar &ldquo;{equipo.name}&rdquo;</p>
+                <p className="text-brand-secondary text-sm mt-1">Modificar &ldquo;{equipo.name}&rdquo;</p>
             </div>
             <EquipoForm
                 equipoId={equipo.id}

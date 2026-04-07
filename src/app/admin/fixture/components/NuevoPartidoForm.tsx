@@ -43,12 +43,12 @@ export function NuevoPartidoForm({ categorias, equiposPorCategoria, canchas }: N
     };
 
     return (
-        <form action={handleSubmit} className="bg-[#111] border border-zinc-800 rounded-2xl p-6 space-y-6 max-w-lg">
+        <form action={handleSubmit} className="bg-surface border border-surface-border rounded-2xl p-6 space-y-6 max-w-lg">
             {message && <FormMessage type={message.type} message={message.text} />}
 
             {/* Categoría */}
             <div className="space-y-2">
-                <label htmlFor="categoriaId" className="block text-sm font-medium text-zinc-400">
+                <label htmlFor="categoriaId" className="block text-sm font-medium text-brand-secondary">
                     Categoría <span className="text-red-400">*</span>
                 </label>
                 <select
@@ -57,7 +57,7 @@ export function NuevoPartidoForm({ categorias, equiposPorCategoria, canchas }: N
                     required
                     value={selectedCategoria}
                     onChange={(e) => setSelectedCategoria(e.target.value)}
-                    className="w-full px-4 py-3 bg-[#0a0a0a] border border-zinc-800 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#39ff14]/40 transition-all"
+                    className="w-full px-4 py-3 bg-background border border-surface-border rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/40 transition-all"
                 >
                     <option value="">Seleccionar categoría</option>
                     {categorias.map((cat) => (
@@ -68,7 +68,7 @@ export function NuevoPartidoForm({ categorias, equiposPorCategoria, canchas }: N
 
             {/* Equipo Local */}
             <div className="space-y-2">
-                <label htmlFor="equipoLocalId" className="block text-sm font-medium text-zinc-400">
+                <label htmlFor="equipoLocalId" className="block text-sm font-medium text-brand-secondary">
                     Equipo Local <span className="text-red-400">*</span>
                 </label>
                 <select
@@ -76,7 +76,7 @@ export function NuevoPartidoForm({ categorias, equiposPorCategoria, canchas }: N
                     name="equipoLocalId"
                     required
                     disabled={!selectedCategoria}
-                    className="w-full px-4 py-3 bg-[#0a0a0a] border border-zinc-800 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#39ff14]/40 transition-all disabled:opacity-50"
+                    className="w-full px-4 py-3 bg-background border border-surface-border rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/40 transition-all disabled:opacity-50"
                 >
                     <option value="">Seleccionar equipo local</option>
                     {equiposDisponibles.map((eq) => (
@@ -87,7 +87,7 @@ export function NuevoPartidoForm({ categorias, equiposPorCategoria, canchas }: N
 
             {/* Equipo Visitante */}
             <div className="space-y-2">
-                <label htmlFor="equipoVisitanteId" className="block text-sm font-medium text-zinc-400">
+                <label htmlFor="equipoVisitanteId" className="block text-sm font-medium text-brand-secondary">
                     Equipo Visitante <span className="text-red-400">*</span>
                 </label>
                 <select
@@ -95,7 +95,7 @@ export function NuevoPartidoForm({ categorias, equiposPorCategoria, canchas }: N
                     name="equipoVisitanteId"
                     required
                     disabled={!selectedCategoria}
-                    className="w-full px-4 py-3 bg-[#0a0a0a] border border-zinc-800 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#39ff14]/40 transition-all disabled:opacity-50"
+                    className="w-full px-4 py-3 bg-background border border-surface-border rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/40 transition-all disabled:opacity-50"
                 >
                     <option value="">Seleccionar equipo visitante</option>
                     {equiposDisponibles.map((eq) => (
@@ -106,7 +106,7 @@ export function NuevoPartidoForm({ categorias, equiposPorCategoria, canchas }: N
 
             {/* Fecha y Hora */}
             <div className="space-y-2">
-                <label htmlFor="fecha" className="block text-sm font-medium text-zinc-400">
+                <label htmlFor="fecha" className="block text-sm font-medium text-brand-secondary">
                     Fecha y Hora <span className="text-red-400">*</span>
                 </label>
                 <input
@@ -114,20 +114,20 @@ export function NuevoPartidoForm({ categorias, equiposPorCategoria, canchas }: N
                     name="fecha"
                     type="datetime-local"
                     required
-                    className="w-full px-4 py-3 bg-[#0a0a0a] border border-zinc-800 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#39ff14]/40 transition-all [color-scheme:dark]"
+                    className="w-full px-4 py-3 bg-background border border-surface-border rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/40 transition-all [color-scheme:dark]"
                 />
             </div>
 
             {/* Cancha */}
             <div className="space-y-2">
-                <label htmlFor="venueId" className="block text-sm font-medium text-zinc-400">
+                <label htmlFor="venueId" className="block text-sm font-medium text-brand-secondary">
                     Cancha
                 </label>
                 {canchas.length > 0 ? (
                     <select
                         id="venueId"
                         name="venueId"
-                        className="w-full px-4 py-3 bg-[#0a0a0a] border border-zinc-800 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#39ff14]/40 transition-all"
+                        className="w-full px-4 py-3 bg-background border border-surface-border rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/40 transition-all"
                     >
                         <option value="">Seleccionar cancha (opcional)</option>
                         {canchas.map((c) => (
@@ -141,7 +141,7 @@ export function NuevoPartidoForm({ categorias, equiposPorCategoria, canchas }: N
                             name="canchaTextoLibre"
                             type="text"
                             placeholder="Ej: Cancha Enrique Pino"
-                            className="w-full px-4 py-3 bg-[#0a0a0a] border border-zinc-800 rounded-xl text-white placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-[#39ff14]/40 transition-all mb-2"
+                            className="w-full px-4 py-3 bg-background border border-surface-border rounded-xl text-white placeholder-brand-secondary focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/40 transition-all mb-2"
                         />
                         <p className="text-xs text-amber-500 font-medium">No hay canchas registradas en el módulo de Canchas. Agregá una allí para seleccionarla dinámicamente.</p>
                     </div>
@@ -150,7 +150,7 @@ export function NuevoPartidoForm({ categorias, equiposPorCategoria, canchas }: N
 
             {/* Jornada */}
             <div className="space-y-2">
-                <label htmlFor="jornada" className="block text-sm font-medium text-zinc-400">
+                <label htmlFor="jornada" className="block text-sm font-medium text-brand-secondary">
                     Número de Jornada
                 </label>
                 <input
@@ -159,7 +159,7 @@ export function NuevoPartidoForm({ categorias, equiposPorCategoria, canchas }: N
                     type="number"
                     min="1"
                     placeholder="Ej: 1"
-                    className="w-full px-4 py-3 bg-[#0a0a0a] border border-zinc-800 rounded-xl text-white placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-[#39ff14]/40 transition-all"
+                    className="w-full px-4 py-3 bg-background border border-surface-border rounded-xl text-white placeholder-brand-secondary focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/40 transition-all"
                 />
             </div>
 
@@ -168,13 +168,13 @@ export function NuevoPartidoForm({ categorias, equiposPorCategoria, canchas }: N
                 <button
                     type="submit"
                     disabled={isPending}
-                    className="px-6 py-3 bg-[#39ff14] text-black font-bold text-sm rounded-xl hover:bg-[#39ff14]/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="px-6 py-3 bg-[var(--brand-primary)] text-black font-bold text-sm rounded-xl hover:bg-[var(--brand-primary)]/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                     {isPending ? 'Creando...' : 'Crear partido'}
                 </button>
                 <Link
                     href="/admin/fixture"
-                    className="px-6 py-3 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 text-sm rounded-xl transition-all flex items-center"
+                    className="px-6 py-3 text-brand-secondary hover:text-white bg-zinc-800 hover:bg-zinc-700 text-sm rounded-xl transition-all flex items-center"
                 >
                     Cancelar
                 </Link>

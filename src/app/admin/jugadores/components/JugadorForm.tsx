@@ -49,12 +49,12 @@ export function JugadorForm({ jugadorId, equipos, initialData }: JugadorFormProp
     };
 
     return (
-        <form action={handleSubmit} className="bg-[#111] border border-zinc-800 rounded-2xl p-6 space-y-6 max-w-lg">
+        <form action={handleSubmit} className="bg-surface border border-surface-border rounded-2xl p-6 space-y-6 max-w-lg">
             {message && <FormMessage type={message.type} message={message.text} />}
 
             {/* Nombre */}
             <div className="space-y-2">
-                <label htmlFor="nombre" className="block text-sm font-medium text-zinc-400">
+                <label htmlFor="nombre" className="block text-sm font-medium text-brand-secondary">
                     Nombre <span className="text-red-400">*</span>
                 </label>
                 <input
@@ -64,13 +64,13 @@ export function JugadorForm({ jugadorId, equipos, initialData }: JugadorFormProp
                     required
                     defaultValue={initialData?.nombre || ''}
                     placeholder="Ej: Juan"
-                    className="w-full px-4 py-3 bg-[#0a0a0a] border border-zinc-800 rounded-xl text-white placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-[#39ff14]/40 transition-all"
+                    className="w-full px-4 py-3 bg-background border border-surface-border rounded-xl text-white placeholder-brand-secondary focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/40 transition-all"
                 />
             </div>
 
             {/* Apellido */}
             <div className="space-y-2">
-                <label htmlFor="apellido" className="block text-sm font-medium text-zinc-400">
+                <label htmlFor="apellido" className="block text-sm font-medium text-brand-secondary">
                     Apellido
                 </label>
                 <input
@@ -79,13 +79,13 @@ export function JugadorForm({ jugadorId, equipos, initialData }: JugadorFormProp
                     type="text"
                     defaultValue={initialData?.apellido || ''}
                     placeholder="Ej: Pérez"
-                    className="w-full px-4 py-3 bg-[#0a0a0a] border border-zinc-800 rounded-xl text-white placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-[#39ff14]/40 transition-all"
+                    className="w-full px-4 py-3 bg-background border border-surface-border rounded-xl text-white placeholder-brand-secondary focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/40 transition-all"
                 />
             </div>
 
             {/* DNI */}
             <div className="space-y-2">
-                <label htmlFor="dni" className="block text-sm font-medium text-zinc-400">
+                <label htmlFor="dni" className="block text-sm font-medium text-brand-secondary">
                     DNI
                 </label>
                 <input
@@ -94,20 +94,20 @@ export function JugadorForm({ jugadorId, equipos, initialData }: JugadorFormProp
                     type="text"
                     defaultValue={initialData?.dni || ''}
                     placeholder="Ej: 40123456"
-                    className="w-full px-4 py-3 bg-[#0a0a0a] border border-zinc-800 rounded-xl text-white placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-[#39ff14]/40 transition-all"
+                    className="w-full px-4 py-3 bg-background border border-surface-border rounded-xl text-white placeholder-brand-secondary focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/40 transition-all"
                 />
             </div>
 
             {/* Posición */}
             <div className="space-y-2">
-                <label htmlFor="posicion" className="block text-sm font-medium text-zinc-400">
+                <label htmlFor="posicion" className="block text-sm font-medium text-brand-secondary">
                     Posición
                 </label>
                 <select
                     id="posicion"
                     name="posicion"
                     defaultValue={initialData?.posicion || ''}
-                    className="w-full px-4 py-3 bg-[#0a0a0a] border border-zinc-800 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#39ff14]/40 transition-all"
+                    className="w-full px-4 py-3 bg-background border border-surface-border rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/40 transition-all"
                 >
                     <option value="">Seleccionar posición</option>
                     {posiciones.map((pos) => (
@@ -118,7 +118,7 @@ export function JugadorForm({ jugadorId, equipos, initialData }: JugadorFormProp
 
             {/* Equipo */}
             <div className="space-y-2">
-                <label htmlFor="equipoId" className="block text-sm font-medium text-zinc-400">
+                <label htmlFor="equipoId" className="block text-sm font-medium text-brand-secondary">
                     Equipo <span className="text-red-400">*</span>
                 </label>
                 <select
@@ -126,7 +126,7 @@ export function JugadorForm({ jugadorId, equipos, initialData }: JugadorFormProp
                     name="equipoId"
                     required
                     defaultValue={initialData?.equipoId || ''}
-                    className="w-full px-4 py-3 bg-[#0a0a0a] border border-zinc-800 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#39ff14]/40 transition-all"
+                    className="w-full px-4 py-3 bg-background border border-surface-border rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/40 transition-all"
                 >
                     <option value="">Seleccionar equipo</option>
                     {equipos.map((eq) => (
@@ -140,13 +140,13 @@ export function JugadorForm({ jugadorId, equipos, initialData }: JugadorFormProp
                 <button
                     type="submit"
                     disabled={isPending}
-                    className="px-6 py-3 bg-[#39ff14] text-black font-bold text-sm rounded-xl hover:bg-[#39ff14]/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="px-6 py-3 bg-[var(--brand-primary)] text-black font-bold text-sm rounded-xl hover:bg-[var(--brand-primary)]/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                     {isPending ? 'Guardando...' : isEditing ? 'Actualizar jugador' : 'Crear jugador'}
                 </button>
                 <Link
                     href="/admin/jugadores"
-                    className="px-6 py-3 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 text-sm rounded-xl transition-all flex items-center"
+                    className="px-6 py-3 text-brand-secondary hover:text-white bg-zinc-800 hover:bg-zinc-700 text-sm rounded-xl transition-all flex items-center"
                 >
                     Cancelar
                 </Link>

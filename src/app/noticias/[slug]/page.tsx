@@ -50,7 +50,7 @@ export default async function NoticiaDetallePage({ params }: Props) {
             <article>
                 {/* Imagen destacada */}
                 {noticia.imageUrl && (
-                    <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-8 border border-zinc-800">
+                    <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-8 border border-surface-border">
                         <Image
                             src={noticia.imageUrl}
                             alt={noticia.title}
@@ -83,7 +83,7 @@ export default async function NoticiaDetallePage({ params }: Props) {
             </article>
 
             {/* Botón volver inferior */}
-            <div className="mt-12 pt-8 border-t border-zinc-800">
+            <div className="mt-12 pt-8 border-t border-surface-border">
                 <Link
                     href="/noticias"
                     className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-brand-neon/70 hover:text-brand-neon transition-colors group"

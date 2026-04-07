@@ -10,7 +10,7 @@ export function FormMessage({ type, message }: FormMessageProps) {
     <div
       className={`p-4 rounded-xl text-sm ${
         type === 'success'
-          ? 'bg-[#39ff14]/10 text-[#39ff14] border border-[#39ff14]/20'
+          ? 'bg-[var(--brand-primary)]/10 text-[var(--brand-primary)] border border-[var(--brand-primary)]/20'
           : 'bg-red-500/10 text-red-400 border border-red-500/20'
       }`}
     >

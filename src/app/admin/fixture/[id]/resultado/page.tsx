@@ -34,7 +34,7 @@ export default async function ResultadoPage({ params }: ResultadoPageProps) {
         <div className="space-y-6">
             <div>
                 <h1 className="text-2xl font-bold text-white">Cargar resultado</h1>
-                <p className="text-zinc-500 text-sm mt-1">
+                <p className="text-brand-secondary text-sm mt-1">
                     Jornada {partido.round || '—'} — {new Date(partido.date).toLocaleDateString('es-AR')}
                     {(partido.venue?.name || partido.field) && (
                         <> — {partido.venue?.name || partido.field}</>

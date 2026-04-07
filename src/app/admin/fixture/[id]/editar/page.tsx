@@ -62,7 +62,7 @@ export default async function EditarPartidoPage({ params }: EditarPageProps) {
         <div className="space-y-6">
             <div>
                 <h1 className="text-2xl font-bold text-white">Editar partido</h1>
-                <p className="text-zinc-500 text-sm mt-1">
+                <p className="text-brand-secondary text-sm mt-1">
                     {partido.homeTeam.name} vs {partido.awayTeam.name}
                 </p>
             </div>

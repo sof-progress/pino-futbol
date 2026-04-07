@@ -34,7 +34,7 @@ export function ResultadoForm({ matchId, homeTeamName, awayTeamName, currentHome
     };
 
     return (
-        <form action={handleSubmit} className="bg-[#111] border border-zinc-800 rounded-2xl p-6 space-y-6 max-w-md">
+        <form action={handleSubmit} className="bg-surface border border-surface-border rounded-2xl p-6 space-y-6 max-w-md">
             {message && <FormMessage type={message.type} message={message.text} />}
 
             {/* Visual del partido */}
@@ -42,12 +42,12 @@ export function ResultadoForm({ matchId, homeTeamName, awayTeamName, currentHome
                 <div className="flex items-center justify-center gap-6">
                     <div className="text-right flex-1">
                         <p className="text-white font-bold text-lg">{homeTeamName}</p>
-                        <p className="text-xs text-zinc-500">Local</p>
+                        <p className="text-xs text-brand-secondary">Local</p>
                     </div>
                     <span className="text-zinc-600 text-2xl font-bold">VS</span>
                     <div className="text-left flex-1">
                         <p className="text-white font-bold text-lg">{awayTeamName}</p>
-                        <p className="text-xs text-zinc-500">Visitante</p>
+                        <p className="text-xs text-brand-secondary">Visitante</p>
                     </div>
                 </div>
             </div>
@@ -55,7 +55,7 @@ export function ResultadoForm({ matchId, homeTeamName, awayTeamName, currentHome
             {/* Goles */}
             <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
-                    <label htmlFor="golesLocal" className="block text-sm font-medium text-zinc-400 text-center">
+                    <label htmlFor="golesLocal" className="block text-sm font-medium text-brand-secondary text-center">
                         Goles {homeTeamName}
                     </label>
                     <input
@@ -65,11 +65,11 @@ export function ResultadoForm({ matchId, homeTeamName, awayTeamName, currentHome
                         min="0"
                         required
                         defaultValue={currentHomeScore}
-                        className="w-full px-4 py-3 bg-[#0a0a0a] border border-zinc-800 rounded-xl text-white text-center text-2xl font-bold focus:outline-none focus:ring-2 focus:ring-[#39ff14]/40 transition-all"
+                        className="w-full px-4 py-3 bg-background border border-surface-border rounded-xl text-white text-center text-2xl font-bold focus:outline-none focus:ring-2 focus:ring-brand-primary/40 transition-all"
                     />
                 </div>
                 <div className="space-y-2">
-                    <label htmlFor="golesVisitante" className="block text-sm font-medium text-zinc-400 text-center">
+                    <label htmlFor="golesVisitante" className="block text-sm font-medium text-brand-secondary text-center">
                         Goles {awayTeamName}
                     </label>
                     <input
@@ -79,7 +79,7 @@ export function ResultadoForm({ matchId, homeTeamName, awayTeamName, currentHome
                         min="0"
                         required
                         defaultValue={currentAwayScore}
-                        className="w-full px-4 py-3 bg-[#0a0a0a] border border-zinc-800 rounded-xl text-white text-center text-2xl font-bold focus:outline-none focus:ring-2 focus:ring-[#39ff14]/40 transition-all"
+                        className="w-full px-4 py-3 bg-background border border-surface-border rounded-xl text-white text-center text-2xl font-bold focus:outline-none focus:ring-2 focus:ring-brand-primary/40 transition-all"
                     />
                 </div>
             </div>
@@ -93,13 +93,13 @@ export function ResultadoForm({ matchId, homeTeamName, awayTeamName, currentHome
                 <button
                     type="submit"
                     disabled={isPending}
-                    className="flex-1 px-6 py-3 bg-[#39ff14] text-black font-bold text-sm rounded-xl hover:bg-[#39ff14]/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="flex-1 px-6 py-3 bg-brand-primary text-black font-bold text-sm rounded-xl hover:bg-brand-primary/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                     {isPending ? 'Guardando...' : 'Guardar resultado'}
                 </button>
                 <Link
                     href="/admin/fixture"
-                    className="px-6 py-3 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 text-sm rounded-xl transition-all flex items-center"
+                    className="px-6 py-3 text-brand-secondary hover:text-white bg-zinc-800 hover:bg-zinc-700 text-sm rounded-xl transition-all flex items-center"
                 >
                     Cancelar
                 </Link>

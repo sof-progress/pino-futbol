@@ -43,11 +43,11 @@ export default async function FixtureAdminPage({ searchParams }: FixturePageProp
             <div className="flex items-center justify-between flex-wrap gap-4">
                 <div>
                     <h1 className="text-2xl font-bold text-white">Fixture</h1>
-                    <p className="text-zinc-500 text-sm mt-1">Gestión de partidos del torneo</p>
+                    <p className="text-brand-secondary text-sm mt-1">Gestión de partidos del torneo</p>
                 </div>
                 <Link
                     href="/admin/fixture/nuevo"
-                    className="px-4 py-2 bg-[#39ff14] text-black font-bold text-sm rounded-xl hover:bg-[#39ff14]/90 transition-all"
+                    className="px-4 py-2 bg-[var(--brand-primary)] text-black font-bold text-sm rounded-xl hover:bg-[var(--brand-primary)]/90 transition-all"
                 >
                     + Nuevo partido
                 </Link>
@@ -59,23 +59,23 @@ export default async function FixtureAdminPage({ searchParams }: FixturePageProp
                 selectedEstado={estado || ''}
             />
 
-            <div className="bg-[#111] border border-zinc-800 rounded-2xl overflow-hidden">
+            <div className="bg-surface border border-surface-border rounded-2xl overflow-hidden">
                 <div className="overflow-x-auto">
                     <table className="w-full text-sm">
                         <thead>
-                            <tr className="border-b border-zinc-800">
-                                <th className="px-6 py-4 text-zinc-500 font-medium text-center">Fecha #</th>
-                                <th className="text-left px-6 py-4 text-zinc-500 font-medium">Día</th>
-                                <th className="text-left px-6 py-4 text-zinc-500 font-medium">Partido</th>
-                                <th className="px-6 py-4 text-zinc-500 font-medium text-center">Resultado</th>
-                                <th className="px-6 py-4 text-zinc-500 font-medium text-center">Estado</th>
-                                <th className="text-right px-6 py-4 text-zinc-500 font-medium">Acciones</th>
+                            <tr className="border-b border-surface-border">
+                                <th className="px-6 py-4 text-brand-secondary font-medium text-center">Fecha #</th>
+                                <th className="text-left px-6 py-4 text-brand-secondary font-medium">Día</th>
+                                <th className="text-left px-6 py-4 text-brand-secondary font-medium">Partido</th>
+                                <th className="px-6 py-4 text-brand-secondary font-medium text-center">Resultado</th>
+                                <th className="px-6 py-4 text-brand-secondary font-medium text-center">Estado</th>
+                                <th className="text-right px-6 py-4 text-brand-secondary font-medium">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             {partidos.length === 0 ? (
                                 <tr>
-                                    <td colSpan={6} className="px-6 py-12 text-center text-zinc-600">
+                                    <td colSpan={6} className="px-6 py-12 text-center text-brand-secondary">
                                         No hay partidos registrados
                                     </td>
                                 </tr>

@@ -17,7 +17,7 @@ export function ConfirmDialog({ open, title, message, onConfirm, onCancel, loadi
 
     return (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 px-4">
-            <div className="bg-[#111] border border-zinc-800 rounded-2xl p-6 max-w-sm w-full shadow-2xl">
+            <div className="bg-surface border border-surface-border rounded-2xl p-6 max-w-sm w-full shadow-2xl">
                 <div className="flex items-center gap-3 mb-4">
                     <div className="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ef4444" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -27,12 +27,12 @@ export function ConfirmDialog({ open, title, message, onConfirm, onCancel, loadi
                     </div>
                     <h3 className="text-white font-bold text-lg">{title}</h3>
                 </div>
-                <p className="text-zinc-400 text-sm mb-6">{message}</p>
+                <p className="text-brand-secondary text-sm mb-6">{message}</p>
                 <div className="flex gap-3 justify-end">
                     <button
                         onClick={onCancel}
                         disabled={loading}
-                        className="px-4 py-2 text-sm text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 rounded-xl transition-all disabled:opacity-50"
+                        className="px-4 py-2 text-sm text-brand-secondary hover:text-white bg-zinc-800 hover:bg-zinc-700 rounded-xl transition-all disabled:opacity-50"
                     >
                         Cancelar
                     </button>

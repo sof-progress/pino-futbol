@@ -18,7 +18,7 @@ export default async function NoticiasPage() {
                     {noticias.map((noticia) => (
                         <Link key={noticia.id} href={`/noticias/${noticia.slug}`} className="block">
                             <article
-                                className="group bg-zinc-900/60 border border-zinc-800 rounded-2xl overflow-hidden hover:border-brand-neon/40 transition-all duration-300 flex flex-col h-full cursor-pointer"
+                                className="group bg-zinc-900/60 border border-surface-border rounded-2xl overflow-hidden hover:border-brand-primary/40 transition-all duration-300 flex flex-col h-full cursor-pointer"
                             >
                                 {/* Imagen */}
                                 {noticia.imageUrl && (
@@ -36,18 +36,18 @@ export default async function NoticiasPage() {
 
                                 {/* Contenido */}
                                 <div className="p-5 flex flex-col flex-1">
-                                    <time className="text-[10px] font-bold uppercase tracking-widest text-brand-neon/60 mb-2">
+                                    <time className="text-[10px] font-bold uppercase tracking-widest text-brand-primary/60 mb-2">
                                         {new Date(noticia.date).toLocaleDateString('es-AR', {
                                             day: 'numeric',
                                             month: 'long',
                                             year: 'numeric',
                                         })}
                                     </time>
-                                    <h3 className="text-lg font-black text-white uppercase tracking-tight leading-tight group-hover:text-brand-neon transition-colors duration-300">
+                                    <h3 className="text-lg font-black text-white uppercase tracking-tight leading-tight group-hover:text-brand-primary transition-colors duration-300">
                                         {noticia.title}
                                     </h3>
                                     {noticia.content && (
-                                        <p className="text-zinc-400 text-sm mt-3 line-clamp-3 flex-1">
+                                        <p className="text-brand-secondary text-sm mt-3 line-clamp-3 flex-1">
                                             {noticia.content}
                                         </p>
                                     )}
@@ -58,8 +58,8 @@ export default async function NoticiasPage() {
                 </div>
             ) : (
                 /* Estado vacío */
-                <div className="flex flex-col items-center justify-center py-20 border border-brand-neon/10 rounded-3xl bg-zinc-900/30">
-                    <div className="w-16 h-16 mb-6 text-brand-neon/40">
+                <div className="flex flex-col items-center justify-center py-20 border border-brand-primary/10 rounded-3xl bg-zinc-900/30">
+                    <div className="w-16 h-16 mb-6 text-brand-primary/40">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10l4 4v10a2 2 0 01-2 2z" />
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14 4v4h4" />
@@ -67,7 +67,7 @@ export default async function NoticiasPage() {
                         </svg>
                     </div>
                     <h2 className="text-xl font-black uppercase tracking-widest text-white mb-2 italic">No hay noticias publicadas aún</h2>
-                    <p className="text-brand-neon/60 text-sm max-w-md text-center">Las novedades del fútbol barrial aparecerán aquí cuando se publiquen.</p>
+                    <p className="text-brand-primary/60 text-sm max-w-md text-center">Las novedades del fútbol barrial aparecerán aquí cuando se publiquen.</p>
                 </div>
             )}
         </div>

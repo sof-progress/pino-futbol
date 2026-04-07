@@ -30,22 +30,22 @@ export function CategoriaRow({ id, name, season, teamsCount, matchesCount }: Cat
 
     return (
         <>
-            <tr className="border-b border-zinc-800/50 hover:bg-zinc-900/30 transition-colors">
+            <tr className="border-b border-surface-border/50 hover:bg-zinc-900/30 transition-colors">
                 <td className="px-6 py-4 text-white font-medium">{name}</td>
-                <td className="px-6 py-4 text-zinc-400">{season || '—'}</td>
-                <td className="px-6 py-4 text-center text-zinc-400">{teamsCount}</td>
-                <td className="px-6 py-4 text-center text-zinc-400">{matchesCount}</td>
+                <td className="px-6 py-4 text-brand-secondary">{season || '—'}</td>
+                <td className="px-6 py-4 text-center text-brand-secondary">{teamsCount}</td>
+                <td className="px-6 py-4 text-center text-brand-secondary">{matchesCount}</td>
                 <td className="px-6 py-4 text-right">
                     <div className="flex items-center justify-end gap-2">
                         <Link
                             href={`/admin/categorias/${id}/editar`}
-                            className="px-3 py-1.5 text-xs text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 rounded-lg transition-all"
+                            className="px-3 py-1.5 text-xs text-brand-secondary hover:text-white bg-zinc-800 hover:bg-zinc-700 rounded-lg transition-all"
                         >
                             Editar
                         </Link>
                         <button
                             onClick={() => setShowConfirm(true)}
-                            className="px-3 py-1.5 text-xs text-zinc-400 hover:text-red-400 bg-zinc-800 hover:bg-red-500/10 rounded-lg transition-all"
+                            className="px-3 py-1.5 text-xs text-brand-secondary hover:text-red-400 bg-zinc-800 hover:bg-red-500/10 rounded-lg transition-all"
                         >
                             Eliminar
                         </button>

@@ -50,7 +50,7 @@ export function CanchaForm({ cancha }: CanchaFormProps) {
   };
 
   return (
-    <div className="bg-[#0d0d0d] border border-zinc-800 rounded-2xl p-6 lg:p-8 max-w-2xl">
+    <div className="bg-surface border border-surface-border rounded-2xl p-6 lg:p-8 max-w-2xl">
       <h2 className="text-xl font-bold text-white mb-6">
         {isEditing ? 'Editar Cancha' : 'Nueva Cancha'}
       </h2>
@@ -59,7 +59,7 @@ export function CanchaForm({ cancha }: CanchaFormProps) {
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
-          <label htmlFor="nombre" className="block text-sm font-medium text-zinc-400 mb-2">
+          <label htmlFor="nombre" className="block text-sm font-medium text-brand-secondary mb-2">
             Nombre de la cancha *
           </label>
           <input
@@ -68,13 +68,13 @@ export function CanchaForm({ cancha }: CanchaFormProps) {
             name="nombre"
             required
             defaultValue={cancha?.name || ''}
-            className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#39ff14] focus:ring-1 focus:ring-[#39ff14] transition-all"
+            className="w-full bg-zinc-900 border border-surface-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[var(--brand-primary)] focus:ring-1 focus:ring-[var(--brand-primary)] transition-all"
             placeholder="Ej: El Pino, Nora Vera, etc."
           />
         </div>
 
         <div>
-          <label htmlFor="direccion" className="block text-sm font-medium text-zinc-400 mb-2">
+          <label htmlFor="direccion" className="block text-sm font-medium text-brand-secondary mb-2">
             Dirección
           </label>
           <input
@@ -82,13 +82,13 @@ export function CanchaForm({ cancha }: CanchaFormProps) {
             id="direccion"
             name="direccion"
             defaultValue={cancha?.address || ''}
-            className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#39ff14] focus:ring-1 focus:ring-[#39ff14] transition-all"
+            className="w-full bg-zinc-900 border border-surface-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[var(--brand-primary)] focus:ring-1 focus:ring-[var(--brand-primary)] transition-all"
             placeholder="Ej: Calle 13 y 32, Barrio San Benito"
           />
         </div>
 
         <div>
-          <label htmlFor="descripcion" className="block text-sm font-medium text-zinc-400 mb-2">
+          <label htmlFor="descripcion" className="block text-sm font-medium text-brand-secondary mb-2">
             Descripción o Detalles
           </label>
           <textarea
@@ -96,13 +96,13 @@ export function CanchaForm({ cancha }: CanchaFormProps) {
             name="descripcion"
             rows={3}
             defaultValue={cancha?.description || ''}
-            className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#39ff14] focus:ring-1 focus:ring-[#39ff14] transition-all resize-none"
+            className="w-full bg-zinc-900 border border-surface-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[var(--brand-primary)] focus:ring-1 focus:ring-[var(--brand-primary)] transition-all resize-none"
             placeholder="Detalles sobre el terreno (césped sintético, tierra, vestuarios, etc.)"
           />
         </div>
 
         <div>
-          <label htmlFor="mapsUrl" className="block text-sm font-medium text-zinc-400 mb-2">
+          <label htmlFor="mapsUrl" className="block text-sm font-medium text-brand-secondary mb-2">
             URL de Google Maps
           </label>
           <input
@@ -110,13 +110,13 @@ export function CanchaForm({ cancha }: CanchaFormProps) {
             id="mapsUrl"
             name="mapsUrl"
             defaultValue={cancha?.mapsUrl || ''}
-            className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#39ff14] focus:ring-1 focus:ring-[#39ff14] transition-all"
+            className="w-full bg-zinc-900 border border-surface-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[var(--brand-primary)] focus:ring-1 focus:ring-[var(--brand-primary)] transition-all"
             placeholder="https://goo.gl/maps/..."
           />
         </div>
 
         <div>
-          <label htmlFor="imageUrl" className="block text-sm font-medium text-zinc-400 mb-2">
+          <label htmlFor="imageUrl" className="block text-sm font-medium text-brand-secondary mb-2">
             URL de Foto de la cancha
           </label>
           <input
@@ -124,7 +124,7 @@ export function CanchaForm({ cancha }: CanchaFormProps) {
             id="imageUrl"
             name="imageUrl"
             defaultValue={cancha?.imageUrl || ''}
-            className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#39ff14] focus:ring-1 focus:ring-[#39ff14] transition-all"
+            className="w-full bg-zinc-900 border border-surface-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[var(--brand-primary)] focus:ring-1 focus:ring-[var(--brand-primary)] transition-all"
             placeholder="https://ejemplo.com/foto.jpg"
           />
         </div>
@@ -132,14 +132,14 @@ export function CanchaForm({ cancha }: CanchaFormProps) {
         <div className="pt-4 flex items-center gap-4">
           <Link
             href="/admin/canchas"
-            className="px-6 py-3 rounded-xl text-zinc-400 font-bold hover:text-white transition-colors"
+            className="px-6 py-3 rounded-xl text-brand-secondary font-bold hover:text-white transition-colors"
           >
             Cancelar
           </Link>
           <button
             type="submit"
             disabled={isPending}
-            className="flex-1 bg-[#39ff14] text-black font-black uppercase tracking-widest px-6 py-3 rounded-xl hover:bg-[#32e612] transition-colors disabled:opacity-50"
+            className="flex-1 bg-[var(--brand-primary)] text-black font-black uppercase tracking-widest px-6 py-3 rounded-xl hover:bg-brand-primary/90 transition-colors disabled:opacity-50"
           >
             {isPending ? 'Guardando...' : 'Guardar Cancha'}
           </button>

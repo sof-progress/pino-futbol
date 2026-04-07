@@ -34,8 +34,8 @@ interface StandingsTableProps {
 export const StandingsTable: React.FC<StandingsTableProps> = ({ standings, compact = false }) => {
     if (!standings || standings.length === 0) {
         return (
-            <div className="py-20 text-center bg-zinc-900/50 rounded-2xl border border-dashed border-zinc-800">
-                <p className="text-zinc-500 font-medium italic">No hay datos disponibles para esta categoría.</p>
+            <div className="py-20 text-center bg-zinc-900/50 rounded-2xl border border-dashed border-surface-border">
+                <p className="text-brand-secondary font-medium italic">No hay datos disponibles para esta categoría.</p>
             </div>
         );
     }
@@ -45,7 +45,7 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standings, compa
             <div className="overflow-x-auto">
                 <table className="w-full text-left border-collapse">
                     <thead>
-                        <tr className="bg-white/5 text-[10px] sm:text-xs uppercase tracking-[0.2em] text-zinc-400 font-bold">
+                        <tr className="bg-white/5 text-[10px] sm:text-xs uppercase tracking-[0.2em] text-brand-secondary font-bold">
                             <th className="px-3 py-4 text-center w-12">Pos</th>
                             <th className="px-4 py-4">Equipo</th>
                             <th className="px-2 py-4 text-center">PJ</th>
@@ -59,7 +59,7 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standings, compa
                                 </>
                             )}
                             <th className="px-2 py-4 text-center hidden sm:table-cell">DIF</th>
-                            <th className="px-4 py-4 text-center text-brand-neon">PTS</th>
+                            <th className="px-4 py-4 text-center text-brand-primary">PTS</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-white/5 text-sm">
@@ -81,8 +81,8 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standings, compa
                             return (
                                 <tr
                                     key={row.id}
-                                    className={`group transition-colors hover:bg-white/5 ${isFirst ? 'bg-brand-neon/[0.03]' : ''} 
-                                        ${index === 7 ? 'border-b-2 border-brand-neon/20' : ''} 
+                                    className={`group transition-colors hover:bg-white/5 ${isFirst ? 'bg-brand-primary/[0.03]' : ''} 
+                                        ${index === 7 ? 'border-b-2 border-brand-primary/20' : ''} 
                                         ${index === standings.length - 3 && standings.length > 5 ? 'border-b-2 border-red-500/20' : ''}
                                     `}
                                 >
@@ -91,7 +91,7 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standings, compa
                                     </td>
                                     <td className="px-4 py-4">
                                         <div className="flex items-center gap-3">
-                                            <div className={`relative w-8 h-8 rounded-full overflow-hidden bg-zinc-800 border ${isFirst ? 'border-brand-neon/30' : 'border-white/10'}`}>
+                                            <div className={`relative w-8 h-8 rounded-full overflow-hidden bg-zinc-800 border ${isFirst ? 'border-brand-primary/30' : 'border-white/10'}`}>
                                                 {row.team.logoUrl ? (
                                                     <Image
                                                         src={row.team.logoUrl}
@@ -102,33 +102,33 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standings, compa
                                                         unoptimized
                                                     />
                                                 ) : (
-                                                    <div className="flex items-center justify-center h-full text-[10px] font-bold text-zinc-500">
+                                                    <div className="flex items-center justify-center h-full text-[10px] font-bold text-brand-secondary">
                                                         {row.team.name.substring(0, 2).toUpperCase()}
                                                     </div>
                                                 )}
                                             </div>
                                             <div>
-                                                <div className={`font-bold tracking-wide transition-colors group-hover:text-brand-neon ${isFirst ? 'text-white lg:text-base' : 'text-zinc-200'}`}>
+                                                <div className={`font-bold tracking-wide transition-colors group-hover:text-brand-primary ${isFirst ? 'text-white lg:text-base' : 'text-zinc-200'}`}>
                                                     {row.team.name}
                                                 </div>
-                                                <div className="text-[10px] text-zinc-500 uppercase font-medium">{row.team.neighborhood}</div>
+                                                <div className="text-[10px] text-brand-secondary uppercase font-medium">{row.team.neighborhood}</div>
                                             </div>
                                         </div>
                                     </td>
                                     <td className="px-2 py-4 text-center font-medium text-zinc-300">{row.played}</td>
                                     {!compact && (
                                         <>
-                                            <td className="px-2 py-4 text-center hidden sm:table-cell text-zinc-400">{row.won}</td>
-                                            <td className="px-2 py-4 text-center hidden sm:table-cell text-zinc-400">{row.drawn}</td>
-                                            <td className="px-2 py-4 text-center hidden sm:table-cell text-zinc-400">{row.lost}</td>
-                                            <td className="px-2 py-4 text-center hidden md:table-cell text-zinc-500">{row.goalsFor}</td>
-                                            <td className="px-2 py-4 text-center hidden md:table-cell text-zinc-500">{row.goalsAgainst}</td>
+                                            <td className="px-2 py-4 text-center hidden sm:table-cell text-brand-secondary">{row.won}</td>
+                                            <td className="px-2 py-4 text-center hidden sm:table-cell text-brand-secondary">{row.drawn}</td>
+                                            <td className="px-2 py-4 text-center hidden sm:table-cell text-brand-secondary">{row.lost}</td>
+                                            <td className="px-2 py-4 text-center hidden md:table-cell text-brand-secondary">{row.goalsFor}</td>
+                                            <td className="px-2 py-4 text-center hidden md:table-cell text-brand-secondary">{row.goalsAgainst}</td>
                                         </>
                                     )}
-                                    <td className={`px-2 py-4 text-center hidden sm:table-cell font-bold ${diff > 0 ? 'text-emerald-500' : diff < 0 ? 'text-rose-500' : 'text-zinc-500'}`}>
+                                    <td className={`px-2 py-4 text-center hidden sm:table-cell font-bold ${diff > 0 ? 'text-emerald-500' : diff < 0 ? 'text-rose-500' : 'text-brand-secondary'}`}>
                                         {diff > 0 ? `+${diff}` : diff}
                                     </td>
-                                    <td className="px-4 py-4 text-center font-black text-brand-neon text-base lg:text-lg drop-shadow-[0_0_8px_rgba(57,255,20,0.2)]">
+                                    <td className="px-4 py-4 text-center font-black text-brand-primary text-base lg:text-lg drop-shadow-[0_0_8px_rgba(57,255,20,0.2)]">
                                         {row.points}
                                     </td>
                                 </tr>
@@ -140,8 +140,8 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standings, compa
 
             {!compact && (
                 <div className="px-4 py-3 bg-black/40 border-t border-white/5 flex flex-wrap gap-4 text-[10px] uppercase font-bold tracking-widest">
-                    <div className="flex items-center gap-1.5 text-brand-neon/60">
-                        <span className="w-2 h-2 rounded-full bg-brand-neon"></span>
+                    <div className="flex items-center gap-1.5 text-brand-primary/60">
+                        <span className="w-2 h-2 rounded-full bg-brand-primary"></span>
                         Zona de Clasificación
                     </div>
                     <div className="flex items-center gap-1.5 text-rose-500/60">

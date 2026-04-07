@@ -50,7 +50,7 @@ export default async function PosicionesPage({
                 </div>
             ) : (
                 <div className="py-20 text-center">
-                    <p className="text-zinc-500 italic">No se encontraron categorías configuradas.</p>
+                    <p className="text-brand-secondary italic">No se encontraron categorías configuradas.</p>
                 </div>
             )}
         </div>

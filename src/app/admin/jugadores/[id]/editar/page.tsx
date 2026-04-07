@@ -33,7 +33,7 @@ export default async function EditarJugadorPage({ params }: EditarJugadorPagePro
         <div className="space-y-6">
             <div>
                 <h1 className="text-2xl font-bold text-white">Editar jugador</h1>
-                <p className="text-zinc-500 text-sm mt-1">
+                <p className="text-brand-secondary text-sm mt-1">
                     Modificar &ldquo;{[jugador.name, jugador.lastName].filter(Boolean).join(' ')}&rdquo;
                 </p>
             </div>

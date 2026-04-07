@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className="h-full">
-      <body className={`${inter.variable} ${outfit.variable} flex flex-col min-h-full bg-black text-brand-neon antialiased font-sans`}>
+      <body className={`${inter.variable} ${outfit.variable} flex flex-col min-h-full bg-background text-foreground antialiased font-sans`}>
         <PublicLayout>{children}</PublicLayout>
       </body>
     </html>

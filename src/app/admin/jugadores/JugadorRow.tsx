@@ -39,23 +39,23 @@ export function JugadorRow({ id, name, lastName, position, teamName }: JugadorRo
 
     return (
         <>
-            <tr className="border-b border-zinc-800/50 hover:bg-zinc-900/30 transition-colors">
+            <tr className="border-b border-surface-border/50 hover:bg-zinc-900/30 transition-colors">
                 <td className="px-6 py-4 text-white font-medium">{fullName}</td>
-                <td className="px-6 py-4 text-zinc-400">
+                <td className="px-6 py-4 text-brand-secondary">
                     {position ? positionLabels[position] || position : '—'}
                 </td>
-                <td className="px-6 py-4 text-zinc-400">{teamName}</td>
+                <td className="px-6 py-4 text-brand-secondary">{teamName}</td>
                 <td className="px-6 py-4 text-right">
                     <div className="flex items-center justify-end gap-2">
                         <Link
                             href={`/admin/jugadores/${id}/editar`}
-                            className="px-3 py-1.5 text-xs text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 rounded-lg transition-all"
+                            className="px-3 py-1.5 text-xs text-brand-secondary hover:text-white bg-zinc-800 hover:bg-zinc-700 rounded-lg transition-all"
                         >
                             Editar
                         </Link>
                         <button
                             onClick={() => setShowConfirm(true)}
-                            className="px-3 py-1.5 text-xs text-zinc-400 hover:text-red-400 bg-zinc-800 hover:bg-red-500/10 rounded-lg transition-all"
+                            className="px-3 py-1.5 text-xs text-brand-secondary hover:text-red-400 bg-zinc-800 hover:bg-red-500/10 rounded-lg transition-all"
                         >
                             Eliminar
                         </button>

@@ -61,12 +61,12 @@ export function NoticiaForm({ noticiaId, initialData }: NoticiaFormProps) {
     };
 
     return (
-        <form action={handleSubmit} className="bg-[#111] border border-zinc-800 rounded-2xl p-6 space-y-6 max-w-2xl">
+        <form action={handleSubmit} className="bg-surface border border-surface-border rounded-2xl p-6 space-y-6 max-w-2xl">
             {message && <FormMessage type={message.type} message={message.text} />}
 
             {/* Título */}
             <div className="space-y-2">
-                <label htmlFor="titulo" className="block text-sm font-medium text-zinc-400">
+                <label htmlFor="titulo" className="block text-sm font-medium text-brand-secondary">
                     Título <span className="text-red-400">*</span>
                 </label>
                 <input
@@ -77,13 +77,13 @@ export function NoticiaForm({ noticiaId, initialData }: NoticiaFormProps) {
                     defaultValue={initialData?.titulo || ''}
                     onChange={handleTitleChange}
                     placeholder="Ej: Gran victoria de Deportivo en la fecha 5"
-                    className="w-full px-4 py-3 bg-[#0a0a0a] border border-zinc-800 rounded-xl text-white placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-[#39ff14]/40 transition-all"
+                    className="w-full px-4 py-3 bg-background border border-surface-border rounded-xl text-white placeholder-brand-secondary focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/40 transition-all"
                 />
             </div>
 
             {/* Slug */}
             <div className="space-y-2">
-                <label htmlFor="slug" className="block text-sm font-medium text-zinc-400">
+                <label htmlFor="slug" className="block text-sm font-medium text-brand-secondary">
                     Slug (URL amigable)
                 </label>
                 <input
@@ -93,14 +93,14 @@ export function NoticiaForm({ noticiaId, initialData }: NoticiaFormProps) {
                     value={slug}
                     onChange={(e) => setSlug(e.target.value)}
                     placeholder="se-genera-automaticamente"
-                    className="w-full px-4 py-3 bg-[#0a0a0a] border border-zinc-800 rounded-xl text-zinc-500 placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-[#39ff14]/40 transition-all font-mono text-sm"
+                    className="w-full px-4 py-3 bg-background border border-surface-border rounded-xl text-brand-secondary placeholder-brand-secondary focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/40 transition-all font-mono text-sm"
                 />
-                <p className="text-xs text-zinc-600">Se genera automáticamente desde el título</p>
+                <p className="text-xs text-brand-secondary">Se genera automáticamente desde el título</p>
             </div>
 
             {/* Contenido */}
             <div className="space-y-2">
-                <label htmlFor="contenido" className="block text-sm font-medium text-zinc-400">
+                <label htmlFor="contenido" className="block text-sm font-medium text-brand-secondary">
                     Contenido <span className="text-red-400">*</span>
                 </label>
                 <textarea
@@ -110,13 +110,13 @@ export function NoticiaForm({ noticiaId, initialData }: NoticiaFormProps) {
                     rows={8}
                     defaultValue={initialData?.contenido || ''}
                     placeholder="Escribí el contenido de la noticia..."
-                    className="w-full px-4 py-3 bg-[#0a0a0a] border border-zinc-800 rounded-xl text-white placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-[#39ff14]/40 transition-all resize-y"
+                    className="w-full px-4 py-3 bg-background border border-surface-border rounded-xl text-white placeholder-brand-secondary focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/40 transition-all resize-y"
                 />
             </div>
 
             {/* URL de imagen */}
             <div className="space-y-2">
-                <label htmlFor="imageUrl" className="block text-sm font-medium text-zinc-400">
+                <label htmlFor="imageUrl" className="block text-sm font-medium text-brand-secondary">
                     URL de imagen
                 </label>
                 <input
@@ -125,7 +125,7 @@ export function NoticiaForm({ noticiaId, initialData }: NoticiaFormProps) {
                     type="url"
                     defaultValue={initialData?.imageUrl || ''}
                     placeholder="https://ejemplo.com/imagen.jpg"
-                    className="w-full px-4 py-3 bg-[#0a0a0a] border border-zinc-800 rounded-xl text-white placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-[#39ff14]/40 transition-all"
+                    className="w-full px-4 py-3 bg-background border border-surface-border rounded-xl text-white placeholder-brand-secondary focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/40 transition-all"
                 />
             </div>
 
@@ -136,9 +136,9 @@ export function NoticiaForm({ noticiaId, initialData }: NoticiaFormProps) {
                     name="publicada"
                     type="checkbox"
                     defaultChecked={initialData?.publicada ?? true}
-                    className="w-4 h-4 rounded border-zinc-700 bg-[#0a0a0a] text-[#39ff14] focus:ring-[#39ff14]/40 accent-[#39ff14]"
+                    className="w-4 h-4 rounded border-zinc-700 bg-background text-[var(--brand-primary)] focus:ring-[var(--brand-primary)]/40 accent-[var(--brand-primary)]"
                 />
-                <label htmlFor="publicada" className="text-sm text-zinc-400">
+                <label htmlFor="publicada" className="text-sm text-brand-secondary">
                     Publicar inmediatamente
                 </label>
             </div>
@@ -148,13 +148,13 @@ export function NoticiaForm({ noticiaId, initialData }: NoticiaFormProps) {
                 <button
                     type="submit"
                     disabled={isPending}
-                    className="px-6 py-3 bg-[#39ff14] text-black font-bold text-sm rounded-xl hover:bg-[#39ff14]/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="px-6 py-3 bg-[var(--brand-primary)] text-black font-bold text-sm rounded-xl hover:bg-[var(--brand-primary)]/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                     {isPending ? 'Guardando...' : isEditing ? 'Actualizar noticia' : 'Crear noticia'}
                 </button>
                 <Link
                     href="/admin/noticias"
-                    className="px-6 py-3 text-zinc-400 hover:text-white bg-zinc-800 hover:bg-zinc-700 text-sm rounded-xl transition-all flex items-center"
+                    className="px-6 py-3 text-brand-secondary hover:text-white bg-zinc-800 hover:bg-zinc-700 text-sm rounded-xl transition-all flex items-center"
                 >
                     Cancelar
                 </Link>

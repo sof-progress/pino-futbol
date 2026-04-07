@@ -19,7 +19,7 @@ export default async function NuevoJugadorPage() {
         <div className="space-y-6">
             <div>
                 <h1 className="text-2xl font-bold text-white">Nuevo jugador</h1>
-                <p className="text-zinc-500 text-sm mt-1">Registrar un nuevo jugador</p>
+                <p className="text-brand-secondary text-sm mt-1">Registrar un nuevo jugador</p>
             </div>
             <JugadorForm equipos={equipos} />
         </div>

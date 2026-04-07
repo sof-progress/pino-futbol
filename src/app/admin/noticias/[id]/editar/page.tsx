@@ -29,7 +29,7 @@ export default async function EditarNoticiaPage({ params }: EditarNoticiaPagePro
         <div className="space-y-6">
             <div>
                 <h1 className="text-2xl font-bold text-white">Editar noticia</h1>
-                <p className="text-zinc-500 text-sm mt-1">Modificar &ldquo;{noticia.title}&rdquo;</p>
+                <p className="text-brand-secondary text-sm mt-1">Modificar &ldquo;{noticia.title}&rdquo;</p>
             </div>
             <NoticiaForm
                 noticiaId={noticia.id}

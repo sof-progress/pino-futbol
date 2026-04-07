@@ -29,33 +29,33 @@ export default async function CategoriasPage() {
             <div className="flex items-center justify-between">
                 <div>
                     <h1 className="text-2xl font-bold text-white">Categorías</h1>
-                    <p className="text-zinc-500 text-sm mt-1">Gestión de categorías del torneo</p>
+                    <p className="text-brand-secondary text-sm mt-1">Gestión de categorías del torneo</p>
                 </div>
                 <Link
                     href="/admin/categorias/nueva"
-                    className="px-4 py-2 bg-[#39ff14] text-black font-bold text-sm rounded-xl hover:bg-[#39ff14]/90 transition-all"
+                    className="px-4 py-2 bg-[var(--brand-primary)] text-black font-bold text-sm rounded-xl hover:bg-[var(--brand-primary)]/90 transition-all"
                 >
                     + Nueva categoría
                 </Link>
             </div>
 
             {/* Tabla */}
-            <div className="bg-[#111] border border-zinc-800 rounded-2xl overflow-hidden">
+            <div className="bg-surface border border-surface-border rounded-2xl overflow-hidden">
                 <div className="overflow-x-auto">
                     <table className="w-full text-sm">
                         <thead>
-                            <tr className="border-b border-zinc-800">
-                                <th className="text-left px-6 py-4 text-zinc-500 font-medium">Nombre</th>
-                                <th className="text-left px-6 py-4 text-zinc-500 font-medium">Temporada</th>
-                                <th className="text-center px-6 py-4 text-zinc-500 font-medium">Equipos</th>
-                                <th className="text-center px-6 py-4 text-zinc-500 font-medium">Partidos</th>
-                                <th className="text-right px-6 py-4 text-zinc-500 font-medium">Acciones</th>
+                            <tr className="border-b border-surface-border">
+                                <th className="text-left px-6 py-4 text-brand-secondary font-medium">Nombre</th>
+                                <th className="text-left px-6 py-4 text-brand-secondary font-medium">Temporada</th>
+                                <th className="text-center px-6 py-4 text-brand-secondary font-medium">Equipos</th>
+                                <th className="text-center px-6 py-4 text-brand-secondary font-medium">Partidos</th>
+                                <th className="text-right px-6 py-4 text-brand-secondary font-medium">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             {categorias.length === 0 ? (
                                 <tr>
-                                    <td colSpan={5} className="px-6 py-12 text-center text-zinc-600">
+                                    <td colSpan={5} className="px-6 py-12 text-center text-brand-secondary">
                                         No hay categorías registradas
                                     </td>
                                 </tr>

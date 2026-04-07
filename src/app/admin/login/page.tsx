@@ -44,25 +44,25 @@ export default function AdminLoginPage() {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-[#0a0a0a] px-4">
+        <div className="min-h-screen flex items-center justify-center bg-background px-4">
             <div className="w-full max-w-md">
                 {/* Logo / Cabecera */}
                 <div className="text-center mb-8">
-                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#39ff14]/10 border border-[#39ff14]/20 mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#39ff14" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[var(--brand-primary)]/10 border border-[var(--brand-primary)]/20 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--brand-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                         </svg>
                     </div>
                     <h1 className="text-2xl font-bold text-white font-[var(--font-display)]">
                         Panel de Administración
                     </h1>
-                    <p className="text-zinc-500 mt-1 text-sm">
+                    <p className="text-brand-secondary mt-1 text-sm">
                         Pino Fútbol — AIFB Río Gallegos
                     </p>
                 </div>
 
                 {/* Formulario de Login */}
-                <form onSubmit={handleSubmit} className="bg-[#111] border border-zinc-800 rounded-2xl p-8 space-y-6 shadow-2xl">
+                <form onSubmit={handleSubmit} className="bg-surface border border-surface-border rounded-2xl p-8 space-y-6 shadow-2xl">
                     {/* Mensaje de error */}
                     {error && (
                         <div className="bg-red-500/10 border border-red-500/30 rounded-xl px-4 py-3 text-red-400 text-sm flex items-center gap-2">
@@ -77,7 +77,7 @@ export default function AdminLoginPage() {
 
                     {/* Email */}
                     <div className="space-y-2">
-                        <label htmlFor="email" className="block text-sm font-medium text-zinc-400">
+                        <label htmlFor="email" className="block text-sm font-medium text-brand-secondary">
                             Email
                         </label>
                         <input
@@ -87,13 +87,13 @@ export default function AdminLoginPage() {
                             onChange={(e) => setEmail(e.target.value)}
                             placeholder="admin@aifb.com"
                             required
-                            className="w-full px-4 py-3 bg-[#0a0a0a] border border-zinc-800 rounded-xl text-white placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-[#39ff14]/40 focus:border-[#39ff14]/40 transition-all"
+                            className="w-full px-4 py-3 bg-background border border-surface-border rounded-xl text-white placeholder-brand-secondary focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/40 focus:border-[var(--brand-primary)]/40 transition-all"
                         />
                     </div>
 
                     {/* Contraseña */}
                     <div className="space-y-2">
-                        <label htmlFor="password" className="block text-sm font-medium text-zinc-400">
+                        <label htmlFor="password" className="block text-sm font-medium text-brand-secondary">
                             Contraseña
                         </label>
                         <input
@@ -103,7 +103,7 @@ export default function AdminLoginPage() {
                             onChange={(e) => setPassword(e.target.value)}
                             placeholder="••••••••"
                             required
-                            className="w-full px-4 py-3 bg-[#0a0a0a] border border-zinc-800 rounded-xl text-white placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-[#39ff14]/40 focus:border-[#39ff14]/40 transition-all"
+                            className="w-full px-4 py-3 bg-background border border-surface-border rounded-xl text-white placeholder-brand-secondary focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/40 focus:border-[var(--brand-primary)]/40 transition-all"
                         />
                     </div>
 
@@ -111,7 +111,7 @@ export default function AdminLoginPage() {
                     <button
                         type="submit"
                         disabled={loading}
-                        className="w-full py-3 px-4 bg-[#39ff14] text-black font-bold rounded-xl hover:bg-[#39ff14]/90 focus:outline-none focus:ring-2 focus:ring-[#39ff14]/50 focus:ring-offset-2 focus:ring-offset-[#111] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="w-full py-3 px-4 bg-[var(--brand-primary)] text-black font-bold rounded-xl hover:bg-[var(--brand-primary)]/90 focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/50 focus:ring-offset-2 focus:ring-offset-[#111] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                         {loading ? (
                             <span className="flex items-center justify-center gap-2">

@@ -22,11 +22,11 @@ export function FixtureFilter({ categorias, selectedCategoria, selectedEstado }:
     return (
         <div className="flex items-center gap-4 flex-wrap">
             <div className="flex items-center gap-2">
-                <label className="text-sm text-zinc-400">Categoría:</label>
+                <label className="text-sm text-brand-secondary">Categoría:</label>
                 <select
                     value={selectedCategoria}
                     onChange={(e) => router.push(buildUrl(e.target.value, selectedEstado))}
-                    className="px-4 py-2 bg-[#0a0a0a] border border-zinc-800 rounded-xl text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#39ff14]/40"
+                    className="px-4 py-2 bg-background border border-surface-border rounded-xl text-white text-sm focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/40"
                 >
                     <option value="">Todas</option>
                     {categorias.map((cat) => (
@@ -35,11 +35,11 @@ export function FixtureFilter({ categorias, selectedCategoria, selectedEstado }:
                 </select>
             </div>
             <div className="flex items-center gap-2">
-                <label className="text-sm text-zinc-400">Estado:</label>
+                <label className="text-sm text-brand-secondary">Estado:</label>
                 <select
                     value={selectedEstado}
                     onChange={(e) => router.push(buildUrl(selectedCategoria, e.target.value))}
-                    className="px-4 py-2 bg-[#0a0a0a] border border-zinc-800 rounded-xl text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#39ff14]/40"
+                    className="px-4 py-2 bg-background border border-surface-border rounded-xl text-white text-sm focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/40"
                 >
                     <option value="">Todos</option>
                     <option value="SCHEDULED">Programado</option>

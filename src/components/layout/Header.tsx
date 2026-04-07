@@ -32,7 +32,7 @@ export function Header() {
 
     return (
         <>
-            <header className="sticky top-0 z-50 w-full border-b border-brand-neon bg-black text-brand-neon shadow-sm shadow-brand-neon/20">
+            <header className="sticky top-0 z-50 w-full border-b border-brand-primary bg-black text-brand-primary shadow-sm shadow-brand-primary/20">
                 <div className="container mx-auto flex h-20 items-center justify-between px-4 relative">
                     {/* Logo (Izquierda) */}
                     <Link href="/" className="flex items-center z-50" onClick={closeAll}>
@@ -57,27 +57,27 @@ export function Header() {
                         {menuOptions.map((opt) => (
                             <div key={opt.label} className="relative group">
                                 {opt.isExpandable ? (
-                                    <button className="hover:text-white transition-colors border-b-2 border-transparent hover:border-brand-neon py-1 flex items-center gap-1">
+                                    <button className="hover:text-white transition-colors border-b-2 border-transparent hover:border-brand-primary py-1 flex items-center gap-1">
                                         {opt.label}
                                         <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5"><path d="m6 9 6 6 6-6" /></svg>
                                     </button>
                                 ) : (
                                     <Link
                                         href={opt.href}
-                                        className="hover:text-white transition-colors border-b-2 border-transparent hover:border-brand-neon py-1"
+                                        className="hover:text-white transition-colors border-b-2 border-transparent hover:border-brand-primary py-1"
                                     >
                                         {opt.label}
                                     </Link>
                                 )}
 
                                 {opt.isExpandable && (
-                                    <div className="absolute top-full left-0 mt-2 w-40 bg-black border border-brand-neon rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 shadow-[0_10px_30px_rgba(57,255,20,0.1)]">
+                                    <div className="absolute top-full left-0 mt-2 w-40 bg-black border border-brand-primary rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 shadow-[0_10px_30px_rgba(57,255,20,0.1)]">
                                         <div className="flex flex-col py-2">
                                             {opt.subOptions?.map((sub) => (
                                                 <Link
                                                     key={sub.href}
                                                     href={sub.href}
-                                                    className="px-4 py-2 hover:bg-brand-neon/10 hover:text-white transition-colors text-xs font-bold"
+                                                    className="px-4 py-2 hover:bg-brand-primary/10 hover:text-white transition-colors text-xs font-bold"
                                                 >
                                                     {sub.label}
                                                 </Link>
@@ -92,7 +92,7 @@ export function Header() {
                     {/* Mobile Menu Button (Derecha) */}
                     <div className="lg:hidden z-50">
                         <button
-                            className="p-2 text-brand-neon transition-transform active:scale-95"
+                            className="p-2 text-brand-primary transition-transform active:scale-95"
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
                             aria-label="Toggle Menu"
                         >
@@ -140,7 +140,7 @@ export function Header() {
                                                 <Link
                                                     key={sub.href}
                                                     href={sub.href}
-                                                    className="w-full text-center text-lg font-bold text-brand-neon/70 hover:text-white uppercase tracking-widest"
+                                                    className="w-full text-center text-lg font-bold text-brand-primary/70 hover:text-white uppercase tracking-widest"
                                                     onClick={closeAll}
                                                 >
                                                     {sub.label}
@@ -161,7 +161,7 @@ export function Header() {
                                 )}
                             </div>
                         ))}
-                        <div className="w-12 h-1 bg-brand-neon rounded-full my-8 animate-pulse shadow-[0_0_10px_#39ff14]"></div>
+                        <div className="w-12 h-1 bg-brand-primary rounded-full my-8 animate-pulse shadow-[0_0_10px_var(--brand-primary)]"></div>
                     </nav>
                 </div>
             </header>

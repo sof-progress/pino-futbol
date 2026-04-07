@@ -105,14 +105,14 @@ export function AdminSidebar({ isOpen, onClose }: AdminSidebarProps) {
 
             {/* Sidebar */}
             <aside
-                className={`fixed top-0 left-0 h-full w-64 bg-[#0d0d0d] border-r border-zinc-800 z-50 transform transition-transform duration-300 lg:translate-x-0 ${isOpen ? 'translate-x-0' : '-translate-x-full'
+                className={`fixed top-0 left-0 h-full w-64 bg-surface border-r border-surface-border z-50 transform transition-transform duration-300 lg:translate-x-0 ${isOpen ? 'translate-x-0' : '-translate-x-full'
                     }`}
             >
                 {/* Logo */}
-                <div className="h-16 flex items-center px-6 border-b border-zinc-800">
+                <div className="h-16 flex items-center px-6 border-b border-surface-border">
                     <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-lg bg-[#39ff14]/10 flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#39ff14" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <div className="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                 <circle cx="12" cy="12" r="10" />
                                 <polygon points="10 8 16 12 10 16 10 8" />
                             </svg>
@@ -129,8 +129,8 @@ export function AdminSidebar({ isOpen, onClose }: AdminSidebarProps) {
                             href={item.href}
                             onClick={onClose}
                             className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all ${isActive(item.href)
-                                    ? 'bg-[#39ff14]/10 text-[#39ff14] border border-[#39ff14]/20'
-                                    : 'text-zinc-400 hover:bg-zinc-800/50 hover:text-white'
+                                    ? 'bg-brand-primary/10 text-brand-primary border border-brand-primary/20'
+                                    : 'text-slate-400 hover:bg-slate-800/50 hover:text-white'
                                 }`}
                         >
                             {item.icon}

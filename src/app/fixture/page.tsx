@@ -55,7 +55,7 @@ export default async function FixturePage({
                 </div>
             ) : (
                 <div className="py-20 text-center">
-                    <p className="text-zinc-500 italic">
+                    <p className="text-brand-secondary italic">
                         No se encontraron categorías configuradas.
                     </p>
                 </div>
@@ -81,7 +81,7 @@ async function FixtureContent({ categoryName }: { categoryName: string }) {
     if (matchdays.length === 0) {
         return (
             <div className="py-20 text-center">
-                <p className="text-zinc-500 italic">
+                <p className="text-brand-secondary italic">
                     No hay partidos registrados para esta categoría.
                 </p>
             </div>

@@ -23,7 +23,7 @@ export function MatchdayAccordion({ matchday, matches, defaultOpen = false }: Ma
     const allScheduled = matches.every(m => m.status === 'SCHEDULED');
 
     return (
-        <section className="bg-zinc-900/40 border border-brand-neon/20 rounded-2xl overflow-hidden transition-colors hover:border-brand-neon/60">
+        <section className="bg-zinc-900/40 border border-brand-primary/20 rounded-2xl overflow-hidden transition-colors hover:border-brand-primary/60">
             {/* Header del acordeón */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
@@ -31,13 +31,13 @@ export function MatchdayAccordion({ matchday, matches, defaultOpen = false }: Ma
                 aria-expanded={isOpen}
             >
                 <div className="flex items-center gap-4">
-                    <h2 className="text-sm sm:text-base font-black uppercase tracking-widest text-brand-neon">
+                    <h2 className="text-sm sm:text-base font-black uppercase tracking-widest text-brand-primary">
                         {title}
                     </h2>
 
                     {/* Indicadores */}
                     <div className="hidden sm:flex items-center gap-2 text-[10px] font-bold tracking-widest uppercase">
-                        <span className="text-zinc-500 bg-zinc-900 px-2 py-1 rounded">
+                        <span className="text-brand-secondary bg-zinc-900 px-2 py-1 rounded">
                             {matchCount} {matchCount === 1 ? 'partido' : 'partidos'}
                         </span>
                         {hasLive && (
@@ -46,12 +46,12 @@ export function MatchdayAccordion({ matchday, matches, defaultOpen = false }: Ma
                             </span>
                         )}
                         {!hasLive && hasFinished && (
-                            <span className="text-brand-neon/70 bg-brand-neon/5 px-2 py-1 rounded border border-brand-neon/20">
+                            <span className="text-brand-primary/70 bg-brand-primary/5 px-2 py-1 rounded border border-brand-primary/20">
                                 Resultados
                             </span>
                         )}
                         {allScheduled && (
-                            <span className="text-zinc-400 bg-zinc-800/50 px-2 py-1 rounded">
+                            <span className="text-brand-secondary bg-zinc-800/50 px-2 py-1 rounded">
                                 Programados
                             </span>
                         )}
@@ -59,7 +59,7 @@ export function MatchdayAccordion({ matchday, matches, defaultOpen = false }: Ma
                 </div>
 
                 {/* Chevron */}
-                <div className={`flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-zinc-900 border border-brand-neon/30 text-brand-neon transition-transform duration-300 group-hover:bg-brand-neon/10 ${isOpen ? 'rotate-180' : ''}`}>
+                <div className={`flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-zinc-900 border border-brand-primary/30 text-brand-primary transition-transform duration-300 group-hover:bg-brand-primary/10 ${isOpen ? 'rotate-180' : ''}`}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                         <path d="m6 9 6 6 6-6" />
                     </svg>
@@ -72,10 +72,10 @@ export function MatchdayAccordion({ matchday, matches, defaultOpen = false }: Ma
                     }`}
             >
                 <div className="overflow-hidden">
-                    <div className="p-4 sm:p-5 border-t border-brand-neon/10">
+                    <div className="p-4 sm:p-5 border-t border-brand-primary/10">
                         {/* Indicadores mobile */}
                         <div className="sm:hidden flex flex-wrap gap-2 mb-4 text-[10px] font-bold tracking-widest uppercase">
-                            <span className="text-zinc-500 bg-zinc-900 px-2 py-1 rounded">
+                            <span className="text-brand-secondary bg-zinc-900 px-2 py-1 rounded">
                                 {matchCount} {matchCount === 1 ? 'partido' : 'partidos'}
                             </span>
                             {hasLive && (
@@ -97,6 +97,7 @@ export function MatchdayAccordion({ matchday, matches, defaultOpen = false }: Ma
                                     field={match.venue?.name || match.field || undefined}
                                     homeTeamLogo={match.homeTeam.logoUrl}
                                     awayTeamLogo={match.awayTeam.logoUrl}
+                                    category={match.category?.name}
                                 />
                             ))}
                         </div>

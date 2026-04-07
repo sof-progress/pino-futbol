@@ -21,12 +21,12 @@ export function CategoryTabs({ tabs, categories, activeTab, onChange, baseUrl }:
     const items = tabs || (categories?.map(c => ({ id: c, label: c })) || []);
 
     return (
-        <div className="flex flex-wrap gap-2 mb-8 border-b border-brand-neon/10 pb-4 overflow-x-auto no-scrollbar">
+        <div className="flex flex-wrap gap-2 mb-8 border-b border-brand-primary/10 pb-4 overflow-x-auto no-scrollbar">
             {items.map((item) => {
                 const isActive = activeTab === item.id;
                 const commonStyles = `px-6 py-2 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-widest transition-all duration-300 border whitespace-nowrap ${isActive
-                        ? 'bg-brand-neon text-black border-brand-neon shadow-[0_0_15px_rgba(57,255,20,0.4)] scale-105'
-                        : 'bg-transparent text-brand-neon/60 border-brand-neon/20 hover:border-brand-neon/50 hover:text-brand-neon'
+                        ? 'bg-brand-primary text-black border-brand-primary shadow-[0_0_15px_rgba(57,255,20,0.4)] scale-105'
+                        : 'bg-transparent text-brand-primary/60 border-brand-primary/20 hover:border-brand-primary/50 hover:text-brand-primary'
                     }`;
 
                 if (baseUrl) {

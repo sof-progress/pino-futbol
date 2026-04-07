@@ -19,7 +19,7 @@ interface FixtureRowProps {
 const statusLabels: Record<string, { label: string; className: string }> = {
     SCHEDULED: { label: 'Programado', className: 'bg-blue-500/10 text-blue-400' },
     LIVE: { label: 'En Vivo', className: 'bg-emerald-500/10 text-emerald-400' },
-    FINISHED: { label: 'Finalizado', className: 'bg-zinc-800 text-zinc-400' },
+    FINISHED: { label: 'Finalizado', className: 'bg-zinc-800 text-brand-secondary' },
     SUSPENDED: { label: 'Suspendido', className: 'bg-amber-500/10 text-amber-400' },
 };
 
@@ -38,17 +38,17 @@ export function FixtureRow({ id, round, date, homeTeamName, awayTeamName, homeSc
         });
     };
 
-    const statusInfo = statusLabels[status] || { label: status, className: 'bg-zinc-800 text-zinc-400' };
+    const statusInfo = statusLabels[status] || { label: status, className: 'bg-zinc-800 text-brand-secondary' };
 
     return (
         <>
-            <tr className="border-b border-zinc-800/50 hover:bg-zinc-900/30 transition-colors">
-                <td className="px-6 py-4 text-zinc-400 text-center">{round || '—'}</td>
-                <td className="px-6 py-4 text-zinc-400">
+            <tr className="border-b border-surface-border/50 hover:bg-zinc-900/30 transition-colors">
+                <td className="px-6 py-4 text-brand-secondary text-center">{round || '—'}</td>
+                <td className="px-6 py-4 text-brand-secondary">
                     {new Date(date).toLocaleDateString('es-AR', { day: '2-digit', month: '2-digit', year: '2-digit' })}
                 </td>
                 <td className="px-6 py-4 text-white font-medium">
-                    {homeTeamName} <span className="text-zinc-500">vs</span> {awayTeamName}
+                    {homeTeamName} <span className="text-brand-secondary">vs</span> {awayTeamName}
                 </td>
                 <td className="px-6 py-4 text-center text-white font-bold">
                     {status === 'FINISHED' ? `${homeScore} - ${awayScore}` : '— - —'}
@@ -69,14 +69,14 @@ export function FixtureRow({ id, round, date, homeTeamName, awayTeamName, homeSc
                         {status !== 'FINISHED' && (
                             <Link
                                 href={`/admin/fixture/${id}/resultado`}
-                                className="px-3 py-1.5 text-xs text-[#39ff14] bg-[#39ff14]/10 hover:bg-[#39ff14]/20 rounded-lg transition-all"
+                                className="px-3 py-1.5 text-xs text-[var(--brand-primary)] bg-[var(--brand-primary)]/10 hover:bg-[var(--brand-primary)]/20 rounded-lg transition-all"
                             >
                                 Cargar resultado
                             </Link>
                         )}
                         <button
                             onClick={() => setShowConfirm(true)}
-                            className="px-3 py-1.5 text-xs text-zinc-400 hover:text-red-400 bg-zinc-800 hover:bg-red-500/10 rounded-lg transition-all"
+                            className="px-3 py-1.5 text-xs text-brand-secondary hover:text-red-400 bg-zinc-800 hover:bg-red-500/10 rounded-lg transition-all"
                         >
                             Eliminar
                         </button>

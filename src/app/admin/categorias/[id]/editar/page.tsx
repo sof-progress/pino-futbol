@@ -29,7 +29,7 @@ export default async function EditarCategoriaPage({ params }: EditarCategoriaPag
         <div className="space-y-6">
             <div>
                 <h1 className="text-2xl font-bold text-white">Editar categoría</h1>
-                <p className="text-zinc-500 text-sm mt-1">Modificar &ldquo;{categoria.name}&rdquo;</p>
+                <p className="text-brand-secondary text-sm mt-1">Modificar &ldquo;{categoria.name}&rdquo;</p>
             </div>
             <CategoriaForm
                 categoriaId={categoria.id}

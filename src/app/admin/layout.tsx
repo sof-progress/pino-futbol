@@ -23,7 +23,7 @@ export default function AdminLayout({
     if (isLoginPage) {
         return (
             <AuthProvider>
-                <div className="min-h-screen bg-[#0a0a0a]">
+                <div className="min-h-screen bg-background">
                     {children}
                 </div>
             </AuthProvider>
@@ -32,7 +32,7 @@ export default function AdminLayout({
 
     return (
         <AuthProvider>
-            <div className="min-h-screen bg-[#0a0a0a] text-white">
+            <div className="min-h-screen bg-background text-white">
                 <AdminSidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
                 {/* Contenido principal con offset del sidebar */}

@@ -1,6 +1,6 @@
 export function Footer() {
     return (
-        <footer className="w-full border-t border-brand-neon bg-black py-8 mt-auto text-brand-neon">
+        <footer className="w-full border-t border-brand-primary bg-black py-8 mt-auto text-brand-primary">
             <div className="container mx-auto px-4">
                 <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                     <div className="text-center md:text-left">
@@ -13,7 +13,7 @@ export function Footer() {
                         <a href="#" className="hover:text-white transition-colors">Contacto</a>
                     </div>
                 </div>
-                <div className="mt-8 pt-4 border-t border-brand-neon/30 text-center text-[10px] opacity-60 uppercase tracking-widest">
+                <div className="mt-8 pt-4 border-t border-brand-primary/30 text-center text-[10px] opacity-60 uppercase tracking-widest">
                     © {new Date().getFullYear()} Pino Futbol - Patagonia Argentina.
                 </div>
             </div>

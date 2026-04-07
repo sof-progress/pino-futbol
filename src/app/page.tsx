@@ -15,20 +15,20 @@ export default async function Home() {
   try {
     liveMatches = await prisma.match.findMany({
       where: { status: 'LIVE' },
-      include: { homeTeam: true, awayTeam: true, venue: true },
+      include: { homeTeam: true, awayTeam: true, venue: true, category: true },
       take: 2,
     });
 
     recentResults = await prisma.match.findMany({
       where: { status: 'FINISHED' },
-      include: { homeTeam: true, awayTeam: true, venue: true },
+      include: { homeTeam: true, awayTeam: true, venue: true, category: true },
       orderBy: { date: 'desc' },
       take: 4,
     });
 
     upcomingMatches = await prisma.match.findMany({
       where: { status: 'SCHEDULED' },
-      include: { homeTeam: true, awayTeam: true, venue: true },
+      include: { homeTeam: true, awayTeam: true, venue: true, category: true },
       orderBy: { date: 'asc' },
       take: 4,
     });
@@ -52,9 +52,10 @@ export default async function Home() {
       homeScore: 1,
       awayScore: 2,
       status: 'LIVE',
+      category: { name: '1° División' },
       date: new Date(),
       field: 'Cancha El Cóndor'
-    }] as MatchWithTeams[];
+    }] as unknown as MatchWithTeams[];
 
     recentResults = [
       {
@@ -64,6 +65,7 @@ export default async function Home() {
         homeScore: 2,
         awayScore: 1,
         status: 'FINISHED',
+        category: { name: 'Primera B' },
         date: new Date('2026-02-23T15:00:00Z'),
         field: 'Cancha Enrique Pino'
       },
@@ -74,10 +76,11 @@ export default async function Home() {
         homeScore: 0,
         awayScore: 0,
         status: 'FINISHED',
+        category: { name: 'Femenino' },
         date: new Date('2026-02-20T17:00:00Z'),
         field: 'Cancha Nora Vera'
       }
-    ] as MatchWithTeams[];
+    ] as unknown as MatchWithTeams[];
 
     upcomingMatches = [
       {
@@ -87,10 +90,11 @@ export default async function Home() {
         homeScore: 0,
         awayScore: 0,
         status: 'SCHEDULED',
+        category: { name: 'Senior' },
         date: new Date('2026-03-01T16:00:00Z'),
         field: 'Cancha Enrique Pino'
       }
-    ] as MatchWithTeams[];
+    ] as unknown as MatchWithTeams[];
   }
 
   return (
@@ -115,6 +119,7 @@ export default async function Home() {
                 field={match.venue?.name || match.field || undefined}
                 homeTeamLogo={match.homeTeam.logoUrl}
                 awayTeamLogo={match.awayTeam.logoUrl}
+                category={match.category?.name}
               />
             ))}
           </div>
@@ -125,7 +130,7 @@ export default async function Home() {
       <section id="resultados">
         <SectionTitle
           title="Últimos Resultados"
-          subtitle="Partidos finalizados recientemente"
+          subtitle="Partidos finalizados"
           action={{ label: "Ver todos", href: "/fixture" }}
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
@@ -142,11 +147,12 @@ export default async function Home() {
                 field={match.venue?.name || match.field || undefined}
                 homeTeamLogo={match.homeTeam.logoUrl}
                 awayTeamLogo={match.awayTeam.logoUrl}
+                category={match.category?.name}
               />
             ))
           ) : (
-            <div className="col-span-full py-12 text-center bg-zinc-900/50 rounded-xl border border-dashed border-zinc-800">
-              <p className="text-zinc-500">No hay resultados recientes para mostrar.</p>
+            <div className="col-span-full py-12 text-center bg-zinc-900/50 rounded-xl border border-dashed border-surface-border">
+              <p className="text-brand-secondary">No hay resultados recientes para mostrar.</p>
             </div>
           )}
         </div>
@@ -184,11 +190,12 @@ export default async function Home() {
                 field={match.venue?.name || match.field || undefined}
                 homeTeamLogo={match.homeTeam.logoUrl}
                 awayTeamLogo={match.awayTeam.logoUrl}
+                category={match.category?.name}
               />
             ))
           ) : (
-            <div className="col-span-full py-12 text-center bg-white rounded-xl border border-dashed border-gray-300">
-              <p className="text-gray-400">Próximamente se publicará la nueva fecha.</p>
+            <div className="col-span-full py-12 text-center bg-surface/50 rounded-xl border border-dashed border-surface-border">
+              <p className="text-slate-500">Próximamente se publicará la nueva fecha.</p>
             </div>
           )}
         </div>

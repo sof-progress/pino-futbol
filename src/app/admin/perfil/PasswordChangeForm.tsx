@@ -54,19 +54,19 @@ export default function PasswordChangeForm() {
       )}
 
       <div>
-        <label className="block text-sm font-medium text-zinc-400 mb-1">
+        <label className="block text-sm font-medium text-brand-secondary mb-1">
           Contraseña Actual
         </label>
         <input
           type="password"
           name="currentPassword"
           required
-          className="w-full bg-[#0a0a0a] border border-zinc-800 rounded-xl px-4 py-2 text-white focus:outline-none focus:border-[#39ff14] transition-colors"
+          className="w-full bg-background border border-surface-border rounded-xl px-4 py-2 text-white focus:outline-none focus:border-[var(--brand-primary)] transition-colors"
         />
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-zinc-400 mb-1">
+        <label className="block text-sm font-medium text-brand-secondary mb-1">
           Nueva Contraseña
         </label>
         <input
@@ -74,13 +74,13 @@ export default function PasswordChangeForm() {
           name="newPassword"
           required
           minLength={8}
-          className="w-full bg-[#0a0a0a] border border-zinc-800 rounded-xl px-4 py-2 text-white focus:outline-none focus:border-[#39ff14] transition-colors"
+          className="w-full bg-background border border-surface-border rounded-xl px-4 py-2 text-white focus:outline-none focus:border-[var(--brand-primary)] transition-colors"
         />
-        <p className="text-xs text-zinc-500 mt-1">Mínimo 8 caracteres</p>
+        <p className="text-xs text-brand-secondary mt-1">Mínimo 8 caracteres</p>
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-zinc-400 mb-1">
+        <label className="block text-sm font-medium text-brand-secondary mb-1">
           Confirmar Nueva Contraseña
         </label>
         <input
@@ -88,7 +88,7 @@ export default function PasswordChangeForm() {
           name="confirmPassword"
           required
           minLength={8}
-          className="w-full bg-[#0a0a0a] border border-zinc-800 rounded-xl px-4 py-2 text-white focus:outline-none focus:border-[#39ff14] transition-colors"
+          className="w-full bg-background border border-surface-border rounded-xl px-4 py-2 text-white focus:outline-none focus:border-[var(--brand-primary)] transition-colors"
         />
       </div>
 
@@ -96,7 +96,7 @@ export default function PasswordChangeForm() {
         <button
           type="submit"
           disabled={loading}
-          className="px-6 py-2 bg-[#39ff14] text-black font-bold rounded-xl hover:bg-[#39ff14]/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+          className="px-6 py-2 bg-[var(--brand-primary)] text-black font-bold rounded-xl hover:bg-[var(--brand-primary)]/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
         >
           {loading ? 'Cambiando...' : 'Cambiar Contraseña'}
         </button>

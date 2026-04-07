@@ -26,18 +26,18 @@ function StatCard({
     return (
         <Link
             href={href}
-            className="bg-[#111] border border-zinc-800 rounded-2xl p-6 hover:border-zinc-700 transition-all group"
+            className="bg-surface border border-surface-border rounded-2xl p-6 hover:border-brand-primary/50 transition-all group shadow-sm"
         >
             <div className="flex items-center justify-between mb-4">
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${color}`}>
                     {icon}
                 </div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-zinc-700 group-hover:text-zinc-400 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-slate-600 group-hover:text-brand-primary transition-colors">
                     <polyline points="9 18 15 12 9 6" />
                 </svg>
             </div>
             <p className="text-3xl font-bold text-white mb-1">{value}</p>
-            <p className="text-sm text-zinc-500">{title}</p>
+            <p className="text-sm text-slate-400">{title}</p>
         </Link>
     );
 }
@@ -56,7 +56,7 @@ export default async function AdminDashboardPage() {
             {/* Título */}
             <div>
                 <h1 className="text-2xl font-bold text-white">Dashboard</h1>
-                <p className="text-zinc-500 text-sm mt-1">
+                <p className="text-slate-400 text-sm mt-1">
                     Resumen general de la plataforma
                 </p>
             </div>
@@ -124,7 +124,7 @@ export default async function AdminDashboardPage() {
                         <Link
                             key={item.href}
                             href={item.href}
-                            className="flex items-center gap-3 px-4 py-3 bg-[#111] border border-zinc-800 rounded-xl hover:border-zinc-700 hover:bg-zinc-900/50 transition-all text-sm text-zinc-300 hover:text-white"
+                            className="flex items-center gap-3 px-4 py-3 bg-surface border border-surface-border rounded-xl hover:border-brand-primary/50 hover:bg-slate-900/50 transition-all text-sm text-slate-300 hover:text-white"
                         >
                             <span className="text-lg">{item.icon}</span>
                             {item.label}
